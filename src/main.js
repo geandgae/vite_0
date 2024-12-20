@@ -2,6 +2,10 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
+import { greet } from './utils/util.js';
+
+console.log(greet('Vite'));
+
 
 document.querySelector('#app').innerHTML = `
   <div>
