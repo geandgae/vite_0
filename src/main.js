@@ -6,7 +6,6 @@ import { greet } from './utils/util.js';
 
 console.log(greet('Vite'));
 
-
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
@@ -26,3 +25,18 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+// head 스크립트로 바꾸기
+async function includeHead() {
+  const headElement = document.getElementById('dynamic-head');
+  if (headElement) {
+    const response = await fetch('/src/head.html'); // 반복되는 head
+    if (response.ok) {
+      const content = await response.text();
+      headElement.outerHTML = content; // <head> 태그를 덮어씌움
+    } else {
+      console.error('Failed to load head.html:', response.statusText);
+    }
+  }
+}
+// includeHead();

@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "preview": "vite preview",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:ejs": "node compile-ejs.js",
+    "build2": "npm run build:ejs && vite build"
   },
   "devDependencies": {
-    "vite": "^6.0.3"
+    "ejs": "^3.1.10",
+    "vite": "^6.0.3",
+    "vite-plugin-html": "^3.2.2"
   }
 }
