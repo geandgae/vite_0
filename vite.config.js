@@ -28,6 +28,18 @@ export default defineConfig({
   //   },
   //   outDir: "./dist", // 빌드 결과물 폴더 (dist)
   // },
+  // build: {
+  //   minify: false, // 압축 비활성화
+  //   rollupOptions: {
+  //     output: {
+  //       // 코드 포맷을 최대한 원본에 가깝게 유지
+  //       preserveModules: true, // 모듈 분리
+  //       entryFileNames: '[name].js', // 파일 이름 원본 유지
+  //       chunkFileNames: '[name].js', // 청크 파일 이름 원본 유지
+  //       assetFileNames: '[name][extname]', // 에셋 파일 이름 원본 유지
+  //     },
+  //   },
+  // },
   plugins: [
     createHtmlPlugin({
       inject: {
