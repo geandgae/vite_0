@@ -36,6 +36,7 @@ export default defineConfig({
           title: 'My Vite App!!',
           description: 'Vite with vite-plugin-html',
           headTemplate: fs.readFileSync(path.resolve(__dirname, 'partials/head.html'), 'utf-8'),
+          bodyTemplate: fs.readFileSync(path.resolve(__dirname, 'partials/body.html'), 'utf-8'),
         },
       },
     }),
