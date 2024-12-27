@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
-import { createHtmlPlugin } from 'vite-plugin-html';
-import fs from 'fs';
-import path from 'path'; // fs 모듈과 path 모듈을 임포트
+import { createHtmlPlugin } from "vite-plugin-html";
+import fs from "fs";
+import path from "path"; // fs 모듈과 path 모듈을 임포트
 
 export default defineConfig({
   // root: "./dist", // 프로젝트 루트를 설정 (src 폴더)
@@ -33,10 +33,10 @@ export default defineConfig({
       inject: {
         // HTML 템플릿에 삽입할 데이터
         data: {
-          title: 'My Vite App!!',
-          description: 'Vite with vite-plugin-html',
-          headTemplate: fs.readFileSync(path.resolve(__dirname, 'partials/head.html'), 'utf-8'),
-          bodyTemplate: fs.readFileSync(path.resolve(__dirname, 'partials/body.html'), 'utf-8'),
+          title: "My Vite App!!",
+          description: "Vite with vite-plugin-html",
+          headTemplate: fs.readFileSync(path.resolve(__dirname, "partials/head.html"), "utf-8"),
+          bodyTemplate: fs.readFileSync(path.resolve(__dirname, "partials/body.html"), "utf-8"),
         },
       },
     }),
