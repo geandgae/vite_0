@@ -28,20 +28,9 @@ export default defineConfig({
   //   },
   //   outDir: "./dist", // 빌드 결과물 폴더 (dist)
   // },
-  // build: {
-  //   minify: false, // 압축 비활성화
-  //   rollupOptions: {
-  //     output: {
-  //       // 코드 포맷을 최대한 원본에 가깝게 유지
-  //       preserveModules: true, // 모듈 분리
-  //       entryFileNames: '[name].js', // 파일 이름 원본 유지
-  //       chunkFileNames: '[name].js', // 청크 파일 이름 원본 유지
-  //       assetFileNames: '[name][extname]', // 에셋 파일 이름 원본 유지
-  //     },
-  //   },
-  // },
   plugins: [
     createHtmlPlugin({
+      minify: false,
       inject: {
         // HTML 템플릿에 삽입할 데이터
         data: {
@@ -49,10 +38,34 @@ export default defineConfig({
           description: "Vite with vite-plugin-html",
           headTemplate: fs.readFileSync(path.resolve(__dirname, "partials/head.html"), "utf-8"),
           bodyTemplate: fs.readFileSync(path.resolve(__dirname, "partials/body.html"), "utf-8"),
+          envTest: process.env.VITE_APP_NAME,
         },
       },
     }),
   ],
+  // define: {
+  //   // Vite의 `import.meta.env`로 환경 변수 설정
+  //   "import.meta.env.VITE_APP_NAME": JSON.stringify(process.env.VITE_APP_NAME), // 클라이언트에서 접근 가능한 방식으로 설정
+  // },
+  // build: {
+  //   minify: false, // 전체 빌드에서 minify 비활성화
+  // },
+  // build: {
+  //   minify: false, // 빌드 시 압축을 비활성화
+  //   rollupOptions: {
+  //     output: {
+  //       // preserveModules: true, // ES 모듈을 유지하여 원본 코드 구조 그대로 유지
+  //       entryFileNames: "[name].js", // 번들링된 JS 파일의 이름을 원본 그대로
+  //       chunkFileNames: "[name].js", // 청크 파일의 이름을 원본 그대로
+  //       assetFileNames: "[name][extname]", // 자산 파일 이름을 원본 그대로
+  //     },
+  //   },
+  // },
+  // build: {
+  //   esbuild: {
+  //     minify: false,  // esbuild에서 직접 minify를 비활성화
+  //   },
+  // },
   server: {
     open: true,
     port: 3200,
