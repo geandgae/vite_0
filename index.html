@@ -1,18 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
+    <!-- app -->
     <div id="app">
-      <div><%= description %></div>
-      <%= envTest %>
+      <!-- shop -->
+      <section class="shop">
+        <!-- trade -->
+        <div class="trade">
+          <div class="wraper">
+            <!-- buy -->
+            <div class="buy">
+              <b>buy</b>
+              <ul></ul>
+            </div>
+            <!-- //buy -->
+            <!-- sell -->
+            <div class="sell">
+              <b>sell</b>
+              <ul></ul>
+            </div>
+            <!-- //sell -->
+          </div>
+          
+          <div class="action">
+            <div id="buyValue">-</div>
+            <div id="sellValue">-</div>
+            <div id="totalValue">-</div>
+            <button id="actionBtn" type="button"></button>
+          </div>
+        </div>
+        <!-- //trade -->
+
+        <!-- inventory -->
+        <div class="inventory">
+          <b>inventory</b>
+          <ul></ul>
+        </div>
+        <!-- //inventory -->
+      </section>
+      <!-- //shop -->
+    </div>
+    <!-- //app -->
+
+    <!-- env -->
+    <div id="env">
+      <p><%= envTest %></p>
+      <p><%= description %></p>
       <%- bodyTemplate %>
       <button id="counter" type="button"></button>
     </div>
+    <!-- //env -->
   </body>
 </html>

@@ -1,10 +1,28 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
+// import javascriptLogo from './javascript.svg'
+// import viteLogo from '/vite.svg'
+
 import { setupCounter } from './counter.js'
 import { greet } from './utils/util.js';
 
-console.log(import.meta.env.VITE_APP_NAME); 
+// 일반함수
+// import { ShopModule } from './shop.js'
+
+// 객체
+import ShopModule from './shop.js';
+
+// counter
+setupCounter(document.querySelector('#counter'))
+
+// console.log(import.meta.env.VITE_APP_NAME);
+// console.log(import.meta.env.VITE_APP_ENV);
+// console.log(import.meta.env.VITE_API_URL);
+// console.log(import.meta.env.VITE_FEATURE_X_ENABLED);
+// if (__APP_ENV__ === "test") {
+//   console.log("test");
+// }
+
+// greet
 console.log(greet('Vite'));
 
 // document.querySelector('#app').innerHTML = `
@@ -25,7 +43,7 @@ console.log(greet('Vite'));
 //   </div>
 // `
 
-setupCounter(document.querySelector('#counter'))
+
 
 // head 스크립트로 바꾸기
 async function includeHead() {
@@ -41,3 +59,10 @@ async function includeHead() {
   }
 }
 // includeHead();
+
+
+// setupShop
+ShopModule.setupShop();
+ShopModule.init();
+ShopModule.func1();
+ShopModule.func2();
