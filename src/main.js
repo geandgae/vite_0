@@ -23,7 +23,7 @@ setupCounter(document.querySelector('#counter'))
 // }
 
 // greet
-console.log(greet('Vite'));
+console.log(greet('!!!'));
 
 // document.querySelector('#app').innerHTML = `
 //   <div>
@@ -62,7 +62,7 @@ async function includeHead() {
 
 
 // setupShop
-ShopModule.setupShop();
 ShopModule.init();
-ShopModule.func1();
-ShopModule.func2();
+// ShopModule.setupShop();
+// ShopModule.func1();
+// ShopModule.func2();
