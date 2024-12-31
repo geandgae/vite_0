@@ -3,13 +3,15 @@ import './style.css'
 // import viteLogo from '/vite.svg'
 
 import { setupCounter } from './counter.js'
-import { greet } from './utils/util.js';
+// import { greet } from './utils/util.js';
 
 // 일반함수
 // import { ShopModule } from './shop.js'
 
 // 객체
-import ShopModule from './shop.js';
+import { setupShop } from './shop.js';
+import { setupPrice } from './price.js'
+// import ShopModule from './shop.js';
 
 // counter
 setupCounter(document.querySelector('#counter'))
@@ -23,7 +25,7 @@ setupCounter(document.querySelector('#counter'))
 // }
 
 // greet
-console.log(greet('!!!'));
+// console.log(greet('!!!'));
 
 // document.querySelector('#app').innerHTML = `
 //   <div>
@@ -62,7 +64,11 @@ async function includeHead() {
 
 
 // setupShop
-ShopModule.init();
-// ShopModule.setupShop();
+// ShopModule.init();
+// ShopModule.setupList();
 // ShopModule.func1();
 // ShopModule.func2();
+setupShop();
+
+// setupPrice
+setupPrice();
